@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <link rel="stylesheet" href="css/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <script src="js/functions.js"></script>
+        <script src="js/jquery-2.1.3.min.js"></script>
+        <script src="js/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+        <script src="js/jquery.tmpl.js"></script>
+        <script id="template" type="text/x-jquery-template">
+            <li class="task ${finished}" id="${identifier}" show="yes">
+                <table class="text" show="yes">
+                    <tr>
+                        <td>
+                            <input type="checkbox" ${checked} class="checkbox"/>
+                        </td>
+                        <td>
+                            ${date}
+                        </td>
+                        <td>
+                            ${message}
+                        </td>
+                        <td><img src="img/edit.png" alt="edit" class="edit"/></td>
+                        <td><img src="img/delete.png" alt="delete" class="delete"/></td>
+                    </tr>
+                </table>
+                <table class="edit" show="no">
+                    <tr>
+                        <td>
+                            <input type="text" class="input"/>
+                        </td>
+                        <td>
+                            <input type="text"/>
+                        </td>
+                        <td class="dummy">
+                        </td>
+                        <td>
+                            <a id="editDone" href="" class="button">&#10004</a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </script>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <nav class="navigationBar">
+                <ul>
+                    <li id="allTasks" class="nav"><a href="">Все задания</a></li>
+                    <li id="done" class="nav"><a href="">Выполненные</a></li>
+                    <li id="toDo" class="nav"><a href="">Невыполненные</a></li>
+                </ul>
+            </nav>
+            <div class="todoApplication">
+                <header>
+                    <h1>Задание</h1>
+                    <input type="text" id="what" size="30" maxlength="80" required placeholder="Что нужно сделать?"/>
+                    <div class="textError" id="textError"></div>
+                    <input type="text" class="input" id="when" placeholder="Когда?"/>
+                    <div class="dateError" id="dateError"></div>
+                    <a class="btn" href="" id="createTask">Добавить</a>
+                </header>
+            </div>
+                <ul id="taskList">
+
+                </ul>
+                <div id="footer"></div>
+            </div>
+    </body>
+</html>
